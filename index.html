@@ -9,13 +9,45 @@
       font-family: Arial, sans-serif;
       line-height: 1.6;
       max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
+      margin: 0 auto;
+      padding: 0;
       background-color: #f9f9f9;
       color: #333;
     }
-    h1, h2, h3 {
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 30px 20px;
+    }
+    h2 {
       color: #004080;
+      margin-top: 40px;
+    }
+    h3 {
+      color: #004080;
+      margin-top: 20px;
     }
     ul {
       padding-left: 20px;
@@ -23,96 +55,104 @@
     .section {
       margin-bottom: 30px;
     }
+    a {
+      color: #004080;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <h1>Haowei Zeng</h1>
-  <p>Email: hzeng16@jh.edu | Phone: (+443)-630-6612</p>
-  <p><a href="https://www.linkedin.com/in/haowei-zeng-98b544327" target="_blank">LinkedIn Profile</a></p>
+  <!-- Header with name and nav -->
+  <header>
+    <h1>Haowei Zeng</h1>
+    <nav>
+      <a href="#education">Education</a>
+      <a href="#work">Work</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <div class="section">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>Johns Hopkins University</strong>, M.S. in Computer and Information Systems Security, 08/2026</li>
-      <li><strong>Wuhan University</strong>, B.S. in Information Security, 06/2024</li>
-    </ul>
-  </div>
+  <!-- Main content -->
+  <main>
+    <div id="contact" class="section">
+      <p>Email: <a href="mailto:hzeng16@jh.edu">hzeng16@jh.edu</a> | Phone: (+443)-630-6612</p>
+      <p><a href="https://www.linkedin.com/in/haowei-zeng-98b544327" target="_blank">LinkedIn Profile</a></p>
+    </div>
 
-  <div class="section">
-    <h2>Professional Skills</h2>
-    <ul>
-      <li>Languages: Java (Proficient), Python, C, JavaScript, SQL, HTML, CSS</li>
-      <li>Frameworks:  Spring Boot, Spring Cloud, Kafka, React, Vue.js</li>
-      <li>Developer Tools: Git, Maven, Docker, Linux, IntelliJ IDEA, VS Code</li>
-      <li>Databases \& AI: MySQL, Redis, PyTorch, TensorFlow, LSTM, NLP</li>
-    </ul>
-  </div>
+    <div id="education" class="section">
+      <h2>Education Background</h2>
+      <ul>
+        <li><b>Johns Hopkins University</b>, Master’s in Computer and Information Systems Security, GPA: 3.8 (08/2026)<br>
+          Recipient of Information Security Institute Fellowship (ISIF) Scholarship (2024)
+        </li>
+        <li><b>Wuhan University</b>, B.S. in Information Security, GPA: 3.68 (06/2024)<br>
+          Publications: First author of two peer-reviewed papers (*Tomorrow*, 2023)<br>
+          Awarded 14th Place in Semi-final of ByteDance (TikTok) AI Security Challenge (2022)
+        </li>
+      </ul>
+    </div>
 
-  <div class="section">
-    <h2>Internship Experiences</h2>
-    <h3>Security Engineer Intern - Guangzhou Jinyu Medical Lab Center</h3>
-    <ul>
-      <li>Conducted level protection evaluation, using Python Selenium to implement an automated traffic monitoring algorithm that 
-can operate 24 hours a day, automatically monitor malicious IPs, and filter based on predefined rules, significantly 
-reducing manual costs.</li>
-      <li>Assisted in network security assessment, including penetration testing, vulnerability scanning and so on</li>
-    </ul>
+    <div id="work" class="section">
+      <h2>Work Experiences</h2>
+      <h3>Security Engineer Intern – Guangzhou KingMed Diagnostics Group Co., Ltd. (08/2023 - 10/2023)</h3>
+      <ul>
+        <li>Built automated traffic monitoring system using Python Selenium + REST APIs; enabled 24/7 real-time defense.</li>
+        <li>Reduced manual review by 70%+ with automated scripts parsing APIs and updating blocklists.</li>
+        <li>Supported penetration testing & vulnerability scanning (Nmap, Burp Suite, EDR).</li>
+      </ul>
 
-    <h3>Software Engineer Intern - Beijing Anxin Tianxing Technology</h3>
-    <ul>
-      <li>Scraped three years of stock forum comments via HTML and API, and built a MySQL database to handle five million pieces 
-of cleaned text data.</li>
-      <li>Developed and trained an LSTM+attention model for sentiment analysis and correlated daily positive/negative post trends 
-with stock price movements. Collaborated with product managers and designers on design reviews and testing plans</li>
-    </ul>
-  </div>
+      <h3>Software Development Engineer Intern – Beijing Anxin Tianxing Technology Co., Ltd. (06/2023 - 08/2023)</h3>
+      <ul>
+        <li>Processed 5M+ stock forum comments via HTML parsing + APIs; stored in MySQL database.</li>
+        <li>Optimized queries with composite indexes & partitioning, reducing latency by 40%.</li>
+        <li>Built ETL pipelines (Python, SQL) for 200K+ daily records; trained LSTM+Attention models for stock-trend analysis.</li>
+      </ul>
 
-  <div class="section">
-    <h2>Projects & Research</h2>
+      <h3>Research Assistant / Algorithm Group Leader – Wuhan University Labs (04/2022 - 08/2023)</h3>
+      <ul>
+        <li>Developed pipelines for text & image datasets (5M+ records) using Python, Pandas, NumPy, OpenCV.</li>
+        <li>Trained LSTM/BiLSTM/Attention models; built adversarial testing framework with GAN/Diffusion.</li>
+        <li>Applied YOLOv5 + ResNet18 for crack detection, achieving 95% terrestrial / 85% underwater accuracy.</li>
+      </ul>
+    </div>
 
-    <h3>High-Concurrency Redis Seckill System</h3>
-    <ul>
-      <li>Designed and implemented a Spring Boot-based high-concurrency system with distributed architecture (10,000+ QPS)</li>
-      <li>Utilized Redis for distributed locks and cache warming, preventing overselling and improving response by 90% </li>
-      <li>Integrated JWT-based authentication and permission control, enabling token issuance upon login, user-level access filtering, and secure route protection across services</li>
-    </ul>
+    <div id="projects" class="section">
+      <h2>Projects & Research</h2>
+      <h3>Spring AI Intelligent Chatbot | Java, Spring Boot, Spring AI (01/2025 - 04/2025)</h3>
+      <ul>
+        <li>Integrated OpenAI API with retry/backoff logic; reduced response latency by 30%.</li>
+        <li>Built WebSocket-based real-time chat system with Redis pub/sub for distributed messaging.</li>
+        <li>Developed prompt management module with SQL + OpenAI SDK for cost tracking and optimization.</li>
+      </ul>
 
-        <h3>SpringAI Intelligent Chatbot</h3>
-    <ul>
-      <li>Developed an intelligent chatbot using Spring Boot and Spring AI framework with OpenAI API integration</li>
-      <li>Designed WebSocket-based real-time communication system supporting concurrent multi-user conversations</li>
-      <li>Implemented prompt-engineering interface and token usage control to support task-specific behavior and cost tracking</li>
-    </ul>
-    
-    <h3>Drone Penetration Testing (JHU)</h3>
-    <ul>
-      <li>Executed DoS & UDP flood attacks to disconnect drones</li>
-      <li>Implemented Man-in-the-Middle (MitM) attacks</li>
-      <li>Analyzed communication protocols and weaknesses</li>
-    </ul>
-    
-    <h3>AIshare Lab Research Assistant</h3>
-    <ul>
-      <li>Worked on data processing, data augmentation through AI models, sentiment analysis, image classification (such as classic 
-LSTM, BiLSTM), adversarial example generation. (e.g., based on GAN, Diffusion Models, etc.)</li>
-      <li>Submitted a paper about the impact of emotions on stock forecasting that is scheduled to be published in Information Fusion.</li>
-    </ul>
-  </div>
+      <h3>Drone Penetration Testing Project | JHU (02/2025 - 04/2025)</h3>
+      <ul>
+        <li>Automated wireless penetration testing with Python/Scapy; simulated DoS/UDP flood attacks.</li>
+        <li>Implemented MitM attacks with Scapy/OpenSSL; analyzed communication protocols via Wireshark.</li>
+      </ul>
 
-  <div class="section">
-    <h2>Honors</h2>
-    <ul>
-      <li>ISIF Scholarship, Johns Hopkins University, 08/2024</li>
-      <li>Top 14 - ByteDance AI Security Challenge, 10/2022</li>
-    </ul>
-  </div>
+      <h3>High-Concurrency Redis Seckill System | Java, Spring Boot, Redis, MySQL, RabbitMQ (10/2024 - 12/2024)</h3>
+      <ul>
+        <li>Handled 10K+ QPS with Redis Cluster + Sentinel (Raft replication).</li>
+        <li>Optimized with distributed locks (Redisson), cache warming, and TTL strategies.</li>
+        <li>Implemented RabbitMQ async order processing and JWT-based API security.</li>
+      </ul>
+    </div>
 
-  <div class="section">
-    <h2>Publications</h2>
-    <ul>
-      <li>"Data Encryption Technology in Network Security", Tomorrow, Jan 2023</li>
-      <li>"Functional Requirement Analysis Method", Tomorrow, Jan 2023</li>
-    </ul>
-  </div>
+    <div id="skills" class="section">
+      <h2>Technical Skills</h2>
+      <ul>
+        <li><b>Languages:</b> Java (Proficient), Python, C, JavaScript, SQL, HTML/CSS</li>
+        <li><b>Frameworks & Libraries:</b> Spring Boot, Spring Cloud, Spring AI, React, Vue.js, PyTorch, TensorFlow</li>
+        <li><b>Databases & Messaging:</b> MySQL, Redis (Cluster, Redisson), RabbitMQ, Kafka, MongoDB (basic)</li>
+        <li><b>Developer Tools / Security & Networking:</b> Git, Docker, Linux, IntelliJ IDEA, VS Code, Maven, Wireshark, Burp Suite, Nmap, OpenSSL, Scapy</li>
+      </ul>
+    </div>
+  </main>
 </body>
 </html>
